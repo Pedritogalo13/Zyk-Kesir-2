@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Zyk-Kesir RPG | Início</title>
+    <!-- Link para o arquivo CSS externo (href solicitado) -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos base para garantir que mesmo sem o arquivo externo, a estrutura funcione */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cinema', 'Cinzel', 'Georgia', 'Times New Roman', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Estilo de fallback para fonte com estilo GOT */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Cinzel', 'Georgia', serif;
+        }
+
+        /* Camada de fundo com textura sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(180, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho com menu sanduíche (mobile/desktop responsivo) -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo / Nome do site (estilizado) -->
+            <div class="logo">
+                <a href="index.html">ZYK-KESIR</a>
+            </div>
+
+            <!-- Botão do menu sanduíche (visível em mobile e centralizado) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Navegação principal (links) -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="ficha.html" class="nav-link">Ficha</a></li>
+                    <li><a href="historia.html" class="nav-link">História</a></li>
+                    <li><a href="sistema.html" class="nav-link">Sistema</a></li>
+                    <li><a href="casasoc.html" class="nav-link">Casas Ocupadas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da aba inicial -->
+    <main class="main-content">
+        <div class="hero">
+            <div class="hero-content">
+                <!-- Texto central exato conforme solicitado -->
+                <h1 class="central-text">Zyk-Kesir.</h1>
+                <div class="divider"></div>
+                <p class="subtext">O destino tece sombras, e os deuses observam em silêncio.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé com texto exato: Zyk-Kesir RPG 2026 -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-text">Zyk-Kesir RPG 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script para funcionalidade do menu sanduíche e responsividade centralizada -->
+    <script>
+        (function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (menuToggle && navMenu) {
+                // Alterna o menu ao clicar no botão hambúrguer
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+
+                // Fecha o menu ao clicar em qualquer link (opcional, melhora UX)
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+
+            // Ajuste para garantir que o menu sanduíche fique centralizado visualmente no mobile
+            // (CSS já cuida do posicionamento, mas pequeno reforço)
+        })();
+    </script>
+</body>
+</html>

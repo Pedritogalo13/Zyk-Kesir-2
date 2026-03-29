@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Zyk-Kesir RPG | História</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos mínimos mantendo as cores preta e vermelha */
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .historia-simples {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .titulo-historia {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: slideUpFade 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .titulo-historia h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #b22222;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .imagem-container {
+            margin: 2rem 0;
+            text-align: center;
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.1s;
+        }
+
+        .imagem-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #b22222;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .conteudo-historia {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.2s;
+        }
+
+        .conteudo-historia p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            white-space: pre-line;
+        }
+
+        .conteudo-historia strong {
+            color: #b22222;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .historia-simples {
+                padding: 1rem;
+            }
+            
+            .titulo-historia h1 {
+                font-size: 1.8rem;
+            }
+            
+            .conteudo-historia p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ZYK-KESIR</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="ficha.html" class="nav-link">Ficha</a></li>
+                    <li><a href="historia.html" class="nav-link">História</a></li>
+                    <li><a href="sistema.html" class="nav-link">Sistema</a></li>
+                    <li><a href="casasoc.html" class="nav-link">Casas Ocupadas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="historia-simples">
+            <div class="titulo-historia">
+                <h1>História</h1>
+            </div>
+
+            <div class="imagem-container">
+                <img src="hist.jpg" alt="Imagem da História">
+            </div>
+
+            <div class="conteudo-historia">
+                <p>Após a morte de Aemond Targaryen, seu filho Rhaekar Targaryen assume o trono durante um inverno repentino, enquanto novas ameaças surgem: a cidade de Mantarys fortalece-se com dragões e magia de sangue, e os Caminhantes Brancos avançam além da Muralha. Após provar a existência dos mortos-vivos, Rhaekar e Gaemon targaryen une Westeros para a guerra. Na grande batalha, a Muralha cai, dragões corrompidos lutam no céu e o Rei da Noite recua após ser gravemente ferido. Um ano depois, enquanto Westeros ainda se recupera, Mantarys prepara uma nova guerra com um exército e <strong>doze dragões</strong> para atacar Braavos e o continente.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-text">Zyk-Kesir RPG 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu sanduíche
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

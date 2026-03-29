@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Zyk-Kesir RPG | Casas Ocupadas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos mantendo as cores preta e vermelha */
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .casas-simples {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .titulo-casas {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: slideUpFade 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .titulo-casas h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #b22222;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .regiao {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #b22222;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+            animation-delay: calc(var(--delay, 0) * 0.05s);
+            transition: transform 0.3s ease;
+        }
+
+        .regiao:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(180, 0, 0, 0.2);
+        }
+
+        .regiao h2 {
+            color: #b22222;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 2px solid #b22222;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .imagem-regiao {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .imagem-regiao img {
+            max-width: 100%;
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #b22222;
+            transition: transform 0.3s ease;
+        }
+
+        .imagem-regiao img:hover {
+            transform: scale(1.02);
+        }
+
+        .casas-lista {
+            margin-top: 1rem;
+        }
+
+        .casas-lista p {
+            margin: 0.5rem 0;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(180, 0, 0, 0.3);
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .casas-simples {
+                padding: 1rem;
+            }
+            
+            .titulo-casas h1 {
+                font-size: 1.8rem;
+            }
+            
+            .regiao h2 {
+                font-size: 1.4rem;
+            }
+            
+            .imagem-regiao img {
+                height: 150px;
+            }
+            
+            .casas-lista p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ZYK-KESIR</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="ficha.html" class="nav-link">Ficha</a></li>
+                    <li><a href="historia.html" class="nav-link">História</a></li>
+                    <li><a href="sistema.html" class="nav-link">Sistema</a></li>
+                    <li><a href="casasoc.html" class="nav-link">Casas Ocupadas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="casas-simples">
+            <div class="titulo-casas">
+                <h1>Casas Ocupadas</h1>
+            </div>
+
+            <div class="regiao" style="--delay:1">
+                <h2>Norte</h2>
+                <div class="imagem-regiao">
+                    <img src="norte.jpg" alt="Norte">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Stark:vagas somente para lorde n soberano</p>
+                    
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:2">
+                <h2>Campina</h2>
+                <div class="imagem-regiao">
+                    <img src="campina.jpg" alt="Campina">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Tyrell:vagas</p>
+                    <p>2. Casa Hightower:vagas</p>
+                    
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:3">
+                <h2>Terras da Coroa</h2>
+                <div class="imagem-regiao">
+                    <img src="coroa.jpg" alt="Terras da Coroa">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Targaryen:Vagas só para principe ou princesa</p>
+                    <p>2. Casa Velaryon:vaga pra personagem que não seja soberano</p>
+                    <p>3. Casa blackfyre:fechada</p>
+                  
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:4">
+                <h2>Dorne</h2>
+                <div class="imagem-regiao">
+                    <img src="dorne.jpg" alt="Dorne">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Martell:Vagas para lorde soberano</p>
+            
+            </div>
+
+            <div class="regiao" style="--delay:5">
+                <h2>Ocidentes</h2>
+                <div class="imagem-regiao">
+                    <img src="ocidentes.jpg" alt="Ocidentes">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Lannister:Vagas mas não para lorde soberano</p>
+                   
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:6">
+                <h2>Terras da Tempestade</h2>
+                <div class="imagem-regiao">
+                    <img src="terrasdatempestade.jpg" alt="Terras da Tempestade">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Baratheon de Ponta Tempestade:Vaga pra lorde</p>
+                   
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:7">
+                <h2>Terras dos Rios</h2>
+                <div class="imagem-regiao">
+                    <img src="terrasdosrios.jpg" alt="Terras dos Rios">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Tully:Vaga pra lorde soberano</p>
+                   
+                </div>
+            </div>
+
+            <div class="regiao" style="--delay:8">
+                <h2>Vale</h2>
+                <div class="imagem-regiao">
+                    <img src="vale.jpg" alt="Vale">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Arryn:Vagas para lorde soberano</p>
+                    
+            </div>
+
+            <div class="regiao" style="--delay:9">
+                <h2>Ilhas de Ferro</h2>
+                <div class="imagem-regiao">
+                    <img src="ilhasdeferro.jpg" alt="Ilhas de Ferro">
+                </div>
+                <div class="casas-lista">
+                    <p>1. Casa Greyjoy:vagas pra lorde soberano</p>
+                  
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-text">Zyk-Kesir RPG 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu sanduíche
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
